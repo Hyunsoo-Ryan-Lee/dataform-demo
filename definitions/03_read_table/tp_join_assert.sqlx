@@ -1,0 +1,12 @@
+config {
+  schema: "education",
+  type: "table",
+  name: "tp_seoul",
+  dependencies: ['education_tp_join_assertions_rowConditions'],
+  tags: ['03']
+}
+
+SELECT
+*
+FROM ${ref("tp_join")}
+WHERE hometown='Seoul'

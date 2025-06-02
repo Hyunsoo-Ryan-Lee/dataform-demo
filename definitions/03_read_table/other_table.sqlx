@@ -1,0 +1,11 @@
+config {
+  schema: "education",
+  name: "battle_tbl",
+  type: "table",
+  tags: ['03']
+}
+
+SELECT
+  *
+FROM
+  dbt_dataset.battle LIMIT 22

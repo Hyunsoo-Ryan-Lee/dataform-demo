@@ -1,0 +1,18 @@
+config {
+  schema: "education",
+  type: "table",
+  assertions: {
+    nonNull: ["trainer_id", "level", "achievement_level"]
+  },
+  tags: ['03'],
+  dependencies: ['battle_tbl']
+}
+
+SELECT
+  tp.trainer_id, tp.level, t.achievement_level, t.hometown
+FROM
+  dbt_dataset.trainer_pokemon tp
+JOIN 
+  dbt_dataset.trainer t
+ON
+  tp.trainer_id = t.id

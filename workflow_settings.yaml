@@ -3,3 +3,7 @@ defaultLocation: asia-northeast3
 defaultDataset: dataform
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.0
+# vars:
+#   EXTERNAL_GCS_BUCKET: gs://codeit-sprint
+#   EXTERNAL_DATASET: dbt_dataset
+#   externalTablesFile: includes/external_tables.js
