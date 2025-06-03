@@ -1,8 +1,16 @@
+/*
+테이블 정의 내에서 Assertions를 설정하면,
+해당 테이블 생성 후 자동으로 데이터 품질 테스트를 수행
+*/
+
 config {
   schema: "education",
   type: "table",
   assertions: {
-    nonNull: ["trainer_id", "level", "achievement_level"]
+    nonNull: ["trainer_id", "level", "achievement_level"],
+    rowConditions: [
+          "level >= 1"
+        ]
   },
   tags: ['03'],
   dependencies: ['battle_tbl']

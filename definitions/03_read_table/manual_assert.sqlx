@@ -1,0 +1,19 @@
+config { type: "assertion" }
+
+
+SELECT
+  tp.trainer_id, tp.level, t.achievement_level, t.hometown
+FROM
+  dbt_dataset.trainer_pokemon tp
+JOIN 
+  dbt_dataset.trainer t
+ON
+  tp.trainer_id = t.id
+WHERE tp.level IS NOT NULL
+
+-- 쿼리가 0행을 반환하면 Assertion 성공, 1행 이상 반환하면 실패.
+
+-- SELECT 
+-- *
+-- FROM education.tp_join
+-- WHERE achievement_level IS NULL
