@@ -1,0 +1,5 @@
+config { type: "assertion" }
+
+SELECT type2
+FROM dbt_dataset.pokemon
+WHERE type2 IS NULL

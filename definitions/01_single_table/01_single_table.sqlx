@@ -3,6 +3,16 @@ config {
   description: "Description of the table",
   columns: {
     number: "Description of the first column"
+  },
+  database: 'sprintda05-hyunsoo',
+  tags: ['01']
+}
+
+pre_operations {
+    CREATE OR REPLACE TABLE sprintda05-hyunsoo.dataform.pre AS SELECT * FROM codeit-hyunsoo.dataform.source
   }
+
+post_operations {
+    CREATE OR REPLACE TABLE sprintda05-hyunsoo.dataform.post AS SELECT * FROM codeit-hyunsoo.dataform.source
 }
 SELECT 1 AS number

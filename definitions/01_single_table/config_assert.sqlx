@@ -1,0 +1,20 @@
+config {
+    type: "table",
+    name: 'pokemon',
+    assertions: {
+        uniqueKey: ["id"],
+        nonNull: ["kor_name", "type2"],
+        rowConditions: [
+            "hp BETWEEN 100 AND 150"
+        ]
+    }
+}
+
+SELECT
+  id,
+  kor_name,
+  type1,
+  type2,
+  hp
+FROM
+  dbt_dataset.pokemon
